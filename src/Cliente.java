@@ -1,16 +1,9 @@
-public class Cliente {
+ public class Cliente implements Autenticable{
 
     private String nombre;
     private String Dni;
     private String profesion;
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getDni() {
         return Dni;
@@ -27,4 +20,13 @@ public class Cliente {
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
-}
+
+     @Override
+     public void setContrasenia(String contrasenia) {
+     }
+
+     @Override
+     public boolean iniciarSesion(String contrasenia) {
+         return false;
+     }
+ }
