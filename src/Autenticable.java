@@ -1,7 +1,7 @@
 public interface Autenticable{
 
-    public void setContrasenia(String contrasenia);
+    public void setClave(String clave);
 
-    public boolean iniciarSesion(String contrasenia);
+    public boolean iniciarSesion(String clave);
 
 }
