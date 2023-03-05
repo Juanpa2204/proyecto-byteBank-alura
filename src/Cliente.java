@@ -3,7 +3,12 @@
     private String nombre;
     private String Dni;
     private String telefono;
-    private String clave;
+
+    private AutenticacionUtil autenticador;
+
+    public Cliente(){
+        this.autenticador = new AutenticacionUtil();
+    }
 
      public String getNombre() {
          return nombre;
@@ -29,16 +34,14 @@
          this.telefono = telefono;
      }
 
-     public String getClave() {
-         return clave;
-     }
 
-     public void setClave(String clave) {
-         this.clave = clave;
+     @Override
+     public void setClave(int clave) {
+         this.autenticador.setClave(clave);
      }
 
      @Override
-     public boolean iniciarSesion(String clave) {
-         return this.clave == clave;
+     public boolean autenticar(int clave) {
+         return this.autenticador.autenticar(clave);
      }
  }

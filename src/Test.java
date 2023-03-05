@@ -1,13 +1,17 @@
 public class Test {
 
     public static void main(String[] args) {
+                CuentaCorriente cc = new CuentaCorriente(222, 333);
+                cc.depositar(500.0);
 
-        SistemaInterno sistema = new SistemaInterno();
-        Gerente gerente1 = new Gerente();
-        Administrador admin = new Administrador();
+                SeguroDeVida seguro = new SeguroDeVida();
 
-        sistema.autentica(gerente1);
-        sistema.autentica(admin);
+                CalculadoraDeImpuesto calc = new CalculadoraDeImpuesto();
+
+                calc.registra(cc);
+                calc.registra(seguro);
+
+                System.out.println(calc.getTotalImpuesto());
+            }
 
         }
-    }
