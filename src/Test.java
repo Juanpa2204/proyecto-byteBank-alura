@@ -1,17 +1,20 @@
 public class Test {
 
     public static void main(String[] args) {
-                CuentaCorriente cc = new CuentaCorriente(222, 333);
-                cc.depositar(500.0);
+        CuentaCorriente cc = new CuentaCorriente(222, 333);
+        CuentaAhorro ca = new CuentaAhorro(123, 456);
+        try {
 
-                SeguroDeVida seguro = new SeguroDeVida();
+            cc.depositar(500.0);
+            cc.retirar(500);
 
-                CalculadoraDeImpuesto calc = new CalculadoraDeImpuesto();
 
-                calc.registra(cc);
-                calc.registra(seguro);
+            ca.depositar(500);
+            ca.retirar(510);
 
-                System.out.println(calc.getTotalImpuesto());
-            }
-
+        } catch (SaldoInsuficienteException e) {
+            e.printStackTrace();
         }
+
+    }
+}
